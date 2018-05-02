@@ -1,4 +1,4 @@
-package tables;
+package br.com.idtem.tables;
 
 
 import com.sun.istack.internal.NotNull;
@@ -15,13 +15,27 @@ import javax.swing.JTable;
  */
 public class ScrollTable extends JTable {
 	/**
-	 * Instantiates a new Tabela com scroll.
+	 * Instanciar uma tabela mutável com scroll
 	 *
-	 * @param objects  objects
-	 * @param objects1 objects 1
+	 * @param data        Os dados a serem inseridos na tabela
+	 * @param columnNames Os nomes das colunas da tabela
+	 *
+	 * @return the scroll table
 	 */
-	public ScrollTable( @NotNull Object[][] objects, @NotNull Object[] objects1 ) {
-		super( objects, objects1 );
+	public static ScrollTable ofMutableCells( @NotNull Object[][] data, @NotNull String[] columnNames ) {
+		ScrollTable table = new ScrollTable( data, columnNames );
+		table.setModel( new EditableTableModel( data, columnNames ) );
+		return table;
+	}
+	
+	/**
+	 * Instanciar uma tabela imutável com scroll
+	 *
+	 * @param data        Os dados a serem inseridos na tabela
+	 * @param columnNames Os nomes das colunas da tabela
+	 */
+	public ScrollTable( @NotNull Object[][] data, @NotNull String[] columnNames ) {
+		super( data, columnNames );
 		/* Desativar a reordenação das colunas */
 		tableHeader.setReorderingAllowed( false );
 		/* Desativar o redimensionamento das colunas */
