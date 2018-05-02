@@ -1,4 +1,4 @@
-package br.com.idtem.tables;
+package com.github.icarohs7.unoxlib.tables;
 
 /**
  * Implementação do modelo de tabela que permite a edição da mesma após a

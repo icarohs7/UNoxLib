@@ -1,4 +1,4 @@
-package br.com.idtem.tables;
+package com.github.icarohs7.unoxlib.tables;
 
 
 import com.sun.istack.internal.NotNull;
