@@ -1,42 +1,40 @@
 package com.github.icarohs7.unoxlib.tables;
 
 
-import com.sun.istack.internal.NotNull;
-
 import java.awt.Dimension;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 /**
- * Sobrescrita da JTable padrão para fazer o tamanho do JScroll se adaptar automaticamente à tabela
+ * Sobrescrita da JTable padrao para fazer o tamanho do JScroll se adaptar automaticamente a tabela
  *
  * @author <a href="https://github.com/icarohs7">Icaro D Temponi</a>
  */
 public class ScrollTable extends JTable {
 	/**
-	 * Instanciar uma tabela mutável com scroll
+	 * Instanciar uma tabela mutavel com scroll
 	 *
 	 * @param data        Os dados a serem inseridos na tabela
 	 * @param columnNames Os nomes das colunas da tabela
 	 *
 	 * @return the scroll table
 	 */
-	public static ScrollTable ofMutableCells( @NotNull Object[][] data, @NotNull String[] columnNames ) {
+	public static ScrollTable ofMutableCells( Object[][] data, String[] columnNames ) {
 		ScrollTable table = new ScrollTable( data, columnNames );
 		table.setModel( new EditableTableModel( data, columnNames ) );
 		return table;
 	}
 	
 	/**
-	 * Instanciar uma tabela imutável com scroll
+	 * Instanciar uma tabela imutavel com scroll
 	 *
 	 * @param data        Os dados a serem inseridos na tabela
 	 * @param columnNames Os nomes das colunas da tabela
 	 */
-	public ScrollTable( @NotNull Object[][] data, @NotNull String[] columnNames ) {
+	public ScrollTable( Object[][] data, String[] columnNames ) {
 		super( data, columnNames );
-		/* Desativar a reordenação das colunas */
+		/* Desativar a reordenacao das colunas */
 		tableHeader.setReorderingAllowed( false );
 		/* Desativar o redimensionamento das colunas */
 		tableHeader.setResizingAllowed( false );
@@ -52,7 +50,7 @@ public class ScrollTable extends JTable {
 	}
 	
 	/**
-	 * Desativar a seleção de células
+	 * Desativar a selecao de celulas
 	 *
 	 * @param i  the
 	 * @param i1 the 1
@@ -65,7 +63,7 @@ public class ScrollTable extends JTable {
 	}
 	
 	/**
-	 * Desativar a edição de células
+	 * Desativar a edicao de celulas
 	 *
 	 * @param i  the
 	 * @param i1 the 1
