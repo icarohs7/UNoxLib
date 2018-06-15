@@ -1,0 +1,71 @@
+import java.nio.file.Paths
+
+plugins {
+	id 'java'
+	id 'maven-publish'
+}
+
+group = 'com.github.icarohs7.unoxlib'
+version = '0.2.1'
+description = 'A Java library with components I use commonly.'
+
+task sourceJar(type: Jar) {
+	from sourceSets.main.allJava
+	classifier "sources"
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+			
+			artifact sourceJar
+			
+			pom {
+				name = rootProject.name
+				description = rootProject.description
+				url = "https://github.com/icarohs7/UNoxLib"
+				packaging = 'jar'
+				licenses {
+					license {
+						name = "MIT License"
+						url = "https://opensource.org/licenses/MIT"
+					}
+				}
+				developers {
+					developer {
+						id = "Umbranox"
+						name = "Icaro D Temponi"
+						email = "icarohs7@gmail.com"
+						timezone = '-3'
+						roles = ['administrator, developer']
+					}
+				}
+				scm {
+					connection = "scm:git:https://github.com/icarohs7/UNoxLib.git"
+					developerConnection = "scm:git:https://github.com/icarohs7/UNoxLib.git"
+					url = "https://github.com/icarohs7/UNoxLib.git"
+				}
+			}
+		}
+	}
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+/* Remove the 2 lines below and the last repo to build successfully */
+def properties = new Properties()
+properties.load(Paths.get("$projectDir", 'local.properties').newInputStream())
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+	maven {
+		url 'https://oss.sonatype.org/content/repositories/snapshots/'
+		credentials {
+			username properties.getProperty('repoUser')
+			password properties.getProperty('repoPass')
+		}
+	}
+}

@@ -5,32 +5,44 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
+          <entry key="gitignore" value="1" />
+          <entry key="gradle" value="3" />
+          <entry key="gradlew" value="1" />
           <entry key="java" value="5" />
-          <entry key="md" value="8" />
-          <entry key="xml" value="5" />
+          <entry key="md" value="9" />
+          <entry key="properties" value="3" />
+          <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
+          <entry key="Git file" value="1" />
+          <entry key="Groovy" value="3" />
           <entry key="JAVA" value="5" />
-          <entry key="Markdown" value="8" />
-          <entry key="XML" value="5" />
+          <entry key="Markdown" value="9" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="gradle" value="832" />
           <entry key="java" value="1163" />
-          <entry key="md" value="2059" />
-          <entry key="txt" value="222" />
+          <entry key="md" value="2139" />
+          <entry key="properties" value="60" />
+          <entry key="txt" value="306" />
           <entry key="xml" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Groovy" value="832" />
           <entry key="JAVA" value="1170" />
-          <entry key="Markdown" value="2052" />
-          <entry key="PLAIN_TEXT" value="222" />
+          <entry key="Markdown" value="2132" />
+          <entry key="PLAIN_TEXT" value="306" />
+          <entry key="Properties" value="60" />
           <entry key="XML" value="23" />
         </counts>
       </usages-collector>
