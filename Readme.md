@@ -1,4 +1,4 @@
-# UNoxLib [![GitHub version](https://badge.fury.io/gh/icarohs7%2FUNoxLib.svg)](https://badge.fury.io/gh/icarohs7%2FUNoxLib)
+# UNoxLib [ ![Download](https://api.bintray.com/packages/icarohs7/libraries/UNoxLib/images/download.svg) ](https://bintray.com/icarohs7/libraries/UNoxLib/_latestVersion)
 
 ## Dependências
 
