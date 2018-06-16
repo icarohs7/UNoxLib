@@ -1,5 +1,6 @@
 package com.github.icarohs7.unoxlib.tables;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,9 +11,9 @@ import javax.swing.table.AbstractTableModel;
  * Implementacao do modelo de tabela que permite a edicao da mesma apos a
  * instanciacao<br>
  * <br>
- * Feito por codejava.net, Codigo e documentacao em<br>
+ * Inspirado pelo modelo de
  * <a href="http://www.codejava.net/java-se/swing/editable-jtable-example">
- * http://www.codejava.net/java-se/swing/editable-jtable-example
+ * codejava.net
  * </a>
  */
 @SuppressWarnings("unused")
@@ -50,7 +51,7 @@ public class EditableTableModel extends AbstractTableModel {
 	 */
 	public void addRow(Object[] entry) {
 		dataEntries.add(entry);
-		fireTableDataChanged();
+		fireTableRowsInserted(dataEntries.size() - 1, dataEntries.size() - 1);
 	}
 	
 	/**
@@ -59,7 +60,7 @@ public class EditableTableModel extends AbstractTableModel {
 	 */
 	public void removeRow(int position) {
 		dataEntries.remove(position);
-		fireTableDataChanged();
+		fireTableRowsDeleted(position, position);
 	}
 	
 	/**
@@ -129,9 +130,18 @@ public class EditableTableModel extends AbstractTableModel {
 	 * @param rowValue Valor a ser definido na linha
 	 * @param row      Indice da linha, de 0 a n
 	 */
-	public void setValueAt(Object rowValue[], int row) {
+	public void setValueAt(Object[] rowValue, int row) {
 		dataEntries.set(row, rowValue);
-		fireTableDataChanged();
+		fireTableRowsUpdated(row, row);
 	}
 	
+	/**
+	 * Remove todas as linhas da tabela e as substitui pelas informadas
+	 * @param rows Linhas
+	 */
+	public void setAllRows(Object[][] rows) {
+		dataEntries.clear();
+		dataEntries.addAll(Arrays.asList(rows));
+		fireTableDataChanged();
+	}
 }

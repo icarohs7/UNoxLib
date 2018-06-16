@@ -84,4 +84,12 @@ model.setValueAt(new String[]{"4","Marcos","28"}, 3); // Altera a quarta linha
 
 // Editar células da tabela
 model.setValueAt("Marta",2,1); // Altera a célula na linha 3 e coluna 2
+
+// Substituir todos os dados ta tabela
+String[][] novosDados = {
+		{"1","Railander","21"},
+		{"2","Jefersom","22"}
+};
+
+model.setAllRows(novosDados);
 ```

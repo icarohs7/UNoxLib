@@ -27,30 +27,47 @@ class Test {
 				Thread.sleep(DELAY);
 				model.addRow(new String[] { "3", "Maria", "30" });
 				frame.pack();
+				
 				Thread.sleep(DELAY);
 				model.addRow(new String[] { "4", "João", "32" });
 				frame.pack();
+				
 				Thread.sleep(DELAY);
 				model.addRow(new String[] { "5", "Geraldo", "25" });
 				frame.pack();
+				
 				Thread.sleep(DELAY);
 				model.addRow(new String[] { "6", "Daniel2", "20" });
 				frame.pack();
+				
 				Thread.sleep(DELAY);
 				model.addRow(new String[] { "7", "Railander", "21" });
 				frame.pack();
+				
 				Thread.sleep(DELAY);
 				model.removeRow(0);
 				frame.pack();
+				
 				Thread.sleep(DELAY);
 				model.removeRow(0);
 				frame.pack();
+				
 				Thread.sleep(DELAY);
 				model.setValueAt(new String[] { "4", "Marcos", "28" }, 3);
 				frame.pack();
+				
 				Thread.sleep(DELAY);
 				model.setValueAt("Marta", 2, 1);
 				frame.pack();
+				
+				Thread.sleep(DELAY);
+				String[][] novosDados = {
+						{ "1", "Railander", "21" },
+						{ "2", "Jefersom", "22" }
+				};
+				model.setAllRows(novosDados);
+				frame.pack();
+				
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
