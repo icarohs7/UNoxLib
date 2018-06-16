@@ -2,10 +2,11 @@
 ## URL com detalhes: http://www.lordgeekcafe.com.br/maven-central-como-publicar-sua-lib-java/
 
 1. atualizar versão no POM, versão essa que será utilizada nos passos 3 e 4
-2. fazer commit e push do update
-3. definir tag no git: git tag **versão** seguido de git push --tag
-4. atualizar no arquivo release.properties:
-	scm.url=scm:git:https://github.com/icarohs7/UNoxLib.git
+2. definir tag no git: git tag **versão**
+3. fazer commit e push do update e da tag
+4. atualizar no arquivo release.properties:<br>
+	**O arquivo gerar_release.bat cria o modelo, bastando definir a versão da tag**<br>
+	scm.url=scm:git:https://github.com/icarohs7/UNoxLib.git<br>
 	scm.tag=v${versão}
 5. mvn release:perform
 6. **pedir a Deus para funcionar**

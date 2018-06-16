@@ -6,7 +6,7 @@
 	
 	<groupId>com.github.icarohs7.unoxlib</groupId>
 	<artifactId>UNoxLib</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.3</version>
 	<packaging>jar</packaging>
 	<name>UNoxLib</name>
 	<description>A Java library with components I use commonly.</description>
@@ -53,6 +53,39 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.1.0</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.1.0</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>1.1.0</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>1.1.0</version>
+			<scope>test</scope>
+		</dependency>
+	
+	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -62,6 +95,23 @@
 				<configuration>
 					<pushChanges>false</pushChanges>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-surefire-provider</artifactId>
+						<version>1.1.0</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.jupiter</groupId>
+						<artifactId>junit-jupiter-engine</artifactId>
+						<version>5.1.0</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
