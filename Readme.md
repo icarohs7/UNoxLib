@@ -1,4 +1,4 @@
-# UNoxLib [ ![Download](https://api.bintray.com/packages/icarohs7/libraries/UNoxLib/images/download.svg) ](https://bintray.com/icarohs7/libraries/UNoxLib/_latestVersion)
+# UNoxLib [ ![Download](https://api.bintray.com/packages/icarohs7/libraries/com.github.icarohs7.unoxlib%3AUNoxLib/images/download.svg) ](https://bintray.com/icarohs7/libraries/com.github.icarohs7.unoxlib%3AUNoxLib/_latestVersion)
 
 ## Dependências
 
