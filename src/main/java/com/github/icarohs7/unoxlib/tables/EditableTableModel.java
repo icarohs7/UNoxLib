@@ -1,7 +1,6 @@
 package com.github.icarohs7.unoxlib.tables;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,7 +41,17 @@ public class EditableTableModel extends AbstractTableModel {
 	 */
 	public EditableTableModel(Object[][] dataEntries, String[] columnTitles) {
 		this.columnTitles = columnTitles;
-		Collections.addAll(this.dataEntries, dataEntries);
+		this.dataEntries.addAll(Arrays.asList(dataEntries));
+	}
+	
+	/**
+	 * Inicializar tabela
+	 * @param dataEntries  Dados contidos nas colunas
+	 * @param columnTitles Títulos das colunas
+	 */
+	public EditableTableModel(List<? extends Object[]> dataEntries, String[] columnTitles) {
+		this.columnTitles = columnTitles;
+		this.dataEntries.addAll(dataEntries);
 	}
 	
 	/**
@@ -142,6 +151,16 @@ public class EditableTableModel extends AbstractTableModel {
 	public void setAllRows(Object[][] rows) {
 		dataEntries.clear();
 		dataEntries.addAll(Arrays.asList(rows));
+		fireTableDataChanged();
+	}
+	
+	/**
+	 * Remove todas as linhas da tabela e as substitui pelas informadas
+	 * @param rows Linhas
+	 */
+	public void setAllRows(List<? extends Object[]> rows) {
+		dataEntries.clear();
+		dataEntries.addAll(rows);
 		fireTableDataChanged();
 	}
 }

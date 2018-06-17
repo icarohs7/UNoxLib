@@ -2,6 +2,7 @@ package com.github.icarohs7.unoxlib.tables;
 
 
 import java.awt.Dimension;
+import java.util.List;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -20,10 +21,17 @@ public class ScrollTable extends JTable {
 	 * @return the scroll table
 	 */
 	public static ScrollTable ofMutableCells(Object[][] data, String[] columnNames) {
-		ScrollTable table = new ScrollTable(data, columnNames);
-		table.setModel(new EditableTableModel(data, columnNames));
-		EditableTableModel model = (EditableTableModel) table.getModel();
-		return table;
+		return ofACustomModel(new EditableTableModel(data, columnNames));
+	}
+	
+	/**
+	 * Instanciar uma tabela mutavel com scroll
+	 * @param data        Os dados a serem inseridos na tabela
+	 * @param columnNames Os nomes das colunas da tabela
+	 * @return the scroll table
+	 */
+	public static ScrollTable ofMutableCells(List<? extends Object[]> data, String[] columnNames) {
+		return ofACustomModel(new EditableTableModel(data, columnNames));
 	}
 	
 	/**
@@ -49,6 +57,7 @@ public class ScrollTable extends JTable {
 		/* Desativar o redimensionamento das colunas */
 		tableHeader.setResizingAllowed(false);
 	}
+	
 	
 	/**
 	 * Retorna um JScrollPane contendo a tabela atual

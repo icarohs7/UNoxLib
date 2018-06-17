@@ -91,5 +91,5 @@ String[][] novosDados = {
 		{"2","Jefersom","22"}
 };
 
-model.setAllRows(novosDados);
+model.setAllRows(novosDados); // Array bidimensional ou lista de arrays
 ```

@@ -6,11 +6,14 @@ import org.junit.jupiter.api.TestInstance;
 import com.github.icarohs7.unoxlib.tables.EditableTableModel;
 import com.github.icarohs7.unoxlib.tables.ScrollTable;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.swing.JFrame;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TablesTest {
-	private final int DELAY = 500;
+	private final int DELAY = 300;
 	@SuppressWarnings("FieldCanBeLocal")
 	private final boolean FRAME_VISIBLE = true;
 	private JFrame frame;
@@ -19,10 +22,14 @@ class TablesTest {
 	
 	private void gerarComponentes() {
 		String[] colunas = { "ID", "Nome", "Idade" };
-		String[][] dados = {
-				{ "1", "Icaro", "21" },
-				{ "2", "Daniel", "20" }
-		};
+		//		String[][] dados = {
+		//				{ "1", "Icaro", "21" },
+		//				{ "2", "Daniel", "20" }
+		//		};
+		List<String[]> dados = new LinkedList<>();
+		dados.add(new String[] { "1", "Icaro", "21" });
+		dados.add(new String[] { "2", "Daniel", "20" });
+		
 		ScrollTable tabela = ScrollTable.ofMutableCells(dados, colunas);
 		model = (EditableTableModel) tabela.getModel();
 		
@@ -114,13 +121,13 @@ class TablesTest {
 				{ "2", "Jefersom", "22" }
 		};
 		
-		Assertions.assertEquals(5, model.getRowCount(), "Confirmar tamanho da tabela antes da redefinição");
+		Assertions.assertEquals(5, model.getRowCount(), "Confirmar tamanho da tabela antes da redefinição 1");
 		
 		model.setAllRows(novosDados);
 		
 		Thread.sleep(DELAY);
 		
-		Assertions.assertEquals(2, model.getRowCount(), "Confirmar tamanho da tabela depois da redefinição");
+		Assertions.assertEquals(2, model.getRowCount(), "Confirmar tamanho da tabela depois da redefinição 1");
 		
 		Assertions.assertEquals("1", model.getValueAt(0, 0), "Confirmar id específico após redefinição 1");
 		Assertions.assertEquals("Railander", model.getValueAt(0, 1), "Confirmar nome específico após redefinição 1");
@@ -129,5 +136,30 @@ class TablesTest {
 		Assertions.assertEquals("2", model.getValueAt(1, 0), "Confirmar id específico após redefinição 2");
 		Assertions.assertEquals("Jefersom", model.getValueAt(1, 1), "Confirmar nome específico após redefinição 2");
 		Assertions.assertEquals("22", model.getValueAt(1, 2), "Confirmar idade específica após redefinição 2");
+		
+		List<String[]> novosDados2 = new LinkedList<>();
+		novosDados2.add(new String[] { "1", "Daniel G", "20" });
+		novosDados2.add(new String[] { "2", "Daniel S", "20" });
+		novosDados2.add(new String[] { "3", "Icaro", "21" });
+		
+		Assertions.assertEquals(2, model.getRowCount(), "Confirmar tamanho da tabela antes da redefinição 2");
+		
+		model.setAllRows(novosDados2);
+		
+		Thread.sleep(DELAY);
+		
+		Assertions.assertEquals(3, model.getRowCount(), "Confirmar tamanho da tabela depois da redefinição 2");
+		
+		Assertions.assertEquals("1", model.getValueAt(0, 0), "Confirmar id específico após redefinição 1");
+		Assertions.assertEquals("Daniel G", model.getValueAt(0, 1), "Confirmar nome específico após redefinição 1");
+		Assertions.assertEquals("20", model.getValueAt(0, 2), "Confirmar idade específica após redefinição 1");
+		
+		Assertions.assertEquals("2", model.getValueAt(1, 0), "Confirmar id específico após redefinição 2");
+		Assertions.assertEquals("Daniel S", model.getValueAt(1, 1), "Confirmar nome específico após redefinição 2");
+		Assertions.assertEquals("20", model.getValueAt(1, 2), "Confirmar idade específica após redefinição 2");
+		
+		Assertions.assertEquals("3", model.getValueAt(2, 0), "Confirmar id específico após redefinição 3");
+		Assertions.assertEquals("Icaro", model.getValueAt(2, 1), "Confirmar nome específico após redefinição 3");
+		Assertions.assertEquals("21", model.getValueAt(2, 2), "Confirmar idade específica após redefinição 3");
 	}
 }
