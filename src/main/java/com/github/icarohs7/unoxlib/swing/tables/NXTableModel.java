@@ -162,4 +162,12 @@ public class NXTableModel extends AbstractTableModel {
 		dataEntries.addAll(rows);
 		fireTableDataChanged();
 	}
+	
+	/**
+	 * Retornar a lista de linhas da tabela
+	 * @return A lista contendo as linhas da tabela
+	 */
+	public List<Object[]> getDataEntries() {
+		return dataEntries;
+	}
 }

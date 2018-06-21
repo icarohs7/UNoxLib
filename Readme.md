@@ -7,7 +7,7 @@ Biblioteca de componentes Java
   * [Gradle](#gradle)
   * [Maven](#maven)
 * [Swing](#swing)
-    * [Tabelas:](#tabelas:)
+    * [Tabelas:](#tabelas)
         * [Obter instância da tabela](#obter-instância-da-tabela)
         * [Tabela editavel](#tabela-editavel)
         * [Tabela a partir de um TableModel personalizado](#tabela-a-partir-de-um-tablemodel-personalizado)
@@ -52,7 +52,7 @@ repositories {
 ```
 # Swing
 
-## Tabelas:
+## Tabelas
 Classes para simplificar a manipulações de tabelas em Swing
 
 ##### Obter instância da tabela
