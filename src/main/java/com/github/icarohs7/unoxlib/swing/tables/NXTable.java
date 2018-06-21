@@ -1,9 +1,8 @@
-package com.github.icarohs7.unoxlib.tables;
+package com.github.icarohs7.unoxlib.swing.tables;
 
 
 import java.awt.Dimension;
 import java.util.List;
-
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
@@ -13,25 +12,25 @@ import javax.swing.table.TableModel;
  * @author <a href="https://github.com/icarohs7">Icaro D Temponi</a>
  */
 @SuppressWarnings("unused")
-public class ScrollTable extends JTable {
+public class NXTable extends JTable {
 	/**
 	 * Instanciar uma tabela mutavel com scroll
 	 * @param data        Os dados a serem inseridos na tabela
 	 * @param columnNames Os nomes das colunas da tabela
-	 * @return the scroll table
+	 * @return A tabela editável
 	 */
-	public static ScrollTable ofMutableCells(Object[][] data, String[] columnNames) {
-		return ofACustomModel(new EditableTableModel(data, columnNames));
+	public static NXTable ofMutableCells(Object[][] data, String[] columnNames) {
+		return ofACustomModel(new NXTableModel(data, columnNames));
 	}
 	
 	/**
 	 * Instanciar uma tabela mutavel com scroll
 	 * @param data        Os dados a serem inseridos na tabela
 	 * @param columnNames Os nomes das colunas da tabela
-	 * @return the scroll table
+	 * @return A tabela editável
 	 */
-	public static ScrollTable ofMutableCells(List<? extends Object[]> data, String[] columnNames) {
-		return ofACustomModel(new EditableTableModel(data, columnNames));
+	public static NXTable ofMutableCells(List<? extends Object[]> data, String[] columnNames) {
+		return ofACustomModel(new NXTableModel(data, columnNames));
 	}
 	
 	/**
@@ -39,8 +38,8 @@ public class ScrollTable extends JTable {
 	 * @param model Tablemodel personalizado
 	 * @return Instância da tabela com o modelo definido
 	 */
-	public static ScrollTable ofACustomModel(TableModel model) {
-		ScrollTable table = new ScrollTable(new String[][] {}, new String[] {});
+	public static NXTable ofACustomModel(TableModel model) {
+		NXTable table = new NXTable(new String[][] {}, new String[] {});
 		table.setModel(model);
 		return table;
 	}
@@ -50,7 +49,7 @@ public class ScrollTable extends JTable {
 	 * @param data        Os dados a serem inseridos na tabela
 	 * @param columnNames Os nomes das colunas da tabela
 	 */
-	public ScrollTable(Object[][] data, String[] columnNames) {
+	public NXTable(Object[][] data, String[] columnNames) {
 		super(data, columnNames);
 		/* Desativar a reordenacao das colunas */
 		tableHeader.setReorderingAllowed(false);
@@ -61,17 +60,17 @@ public class ScrollTable extends JTable {
 	
 	/**
 	 * Retorna um JScrollPane contendo a tabela atual
-	 * @return the scrollable table
+	 * @return Um JScroll pane embrulhando a tabela
 	 */
 	public JScrollPane getScrollableTable() {
 		return new JScrollPane(this);
 	}
 	
 	/**
-	 * Desativar a selecao de celulas
-	 * @param i  the
-	 * @param i1 the 1
-	 * @return the boolean
+	 * Verifica se uma célula é selecionável ou não
+	 * @param i  Linha da célula
+	 * @param i1 Coluna da célula
+	 * @return Se a célula é selecionável ou não
 	 */
 	@Override
 	public boolean isCellSelected(int i, int i1) {
@@ -79,10 +78,10 @@ public class ScrollTable extends JTable {
 	}
 	
 	/**
-	 * Desativar a edicao de celulas
-	 * @param i  the
-	 * @param i1 the 1
-	 * @return the boolean
+	 * Verifica se uma célula é editável ou não
+	 * @param i  Linha da célula
+	 * @param i1 Coluna da célula
+	 * @return Se a célula é editável ou não
 	 */
 	@Override
 	public boolean isCellEditable(int i, int i1) {
@@ -91,7 +90,7 @@ public class ScrollTable extends JTable {
 	
 	/**
 	 * Definir o tamanho da tabela quando embrulhada para o seu tamanho completo
-	 * @return the preferred scrollable viewport size
+	 * @return A dimensão preferida para o JScrollPane envolvendo a tabela
 	 */
 	@Override
 	public Dimension getPreferredScrollableViewportSize() {

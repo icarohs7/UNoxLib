@@ -1,9 +1,8 @@
-package com.github.icarohs7.unoxlib.tables;
+package com.github.icarohs7.unoxlib.swing.tables;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -16,7 +15,7 @@ import javax.swing.table.AbstractTableModel;
  * </a>
  */
 @SuppressWarnings("unused")
-public class EditableTableModel extends AbstractTableModel {
+public class NXTableModel extends AbstractTableModel {
 	
 	/**
 	 * Titulos das colunas
@@ -39,7 +38,7 @@ public class EditableTableModel extends AbstractTableModel {
 	 * @param dataEntries  Dados contidos nas colunas
 	 * @param columnTitles Títulos das colunas
 	 */
-	public EditableTableModel(Object[][] dataEntries, String[] columnTitles) {
+	public NXTableModel(Object[][] dataEntries, String[] columnTitles) {
 		this.columnTitles = columnTitles;
 		this.dataEntries.addAll(Arrays.asList(dataEntries));
 	}
@@ -49,7 +48,7 @@ public class EditableTableModel extends AbstractTableModel {
 	 * @param dataEntries  Dados contidos nas colunas
 	 * @param columnTitles Títulos das colunas
 	 */
-	public EditableTableModel(List<? extends Object[]> dataEntries, String[] columnTitles) {
+	public NXTableModel(List<? extends Object[]> dataEntries, String[] columnTitles) {
 		this.columnTitles = columnTitles;
 		this.dataEntries.addAll(dataEntries);
 	}

@@ -6,7 +6,7 @@
 	
 	<groupId>com.github.icarohs7.unoxlib</groupId>
 	<artifactId>UNoxLib</artifactId>
-	<version>0.2.4</version>
+	<version>0.3.0</version>
 	<packaging>jar</packaging>
 	<name>UNoxLib</name>
 	<description>A Java library with components I use commonly.</description>
