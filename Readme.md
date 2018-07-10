@@ -1,4 +1,11 @@
 # UNoxLib [ ![Download](https://api.bintray.com/packages/icarohs7/libraries/com.github.icarohs7.unoxlib%3AUNoxLib/images/download.svg) ](https://bintray.com/icarohs7/libraries/com.github.icarohs7.unoxlib%3AUNoxLib/_latestVersion)
+
+## Depreciado
+
+Esta biblioteca foi depreciada e não será mais atualizada, novas versões em (UNoxJCommons)[https://github.com/icarohs7/UNoxJCommons]
+
+## Descrição
+
 Biblioteca de componentes Java
 
 ## Sumário
