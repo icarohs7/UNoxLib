@@ -2,7 +2,7 @@
 
 ## Depreciado
 
-Esta biblioteca foi depreciada e não será mais atualizada, novas versões em (UNoxJCommons)[https://github.com/icarohs7/UNoxJCommons]
+Esta biblioteca foi depreciada e não será mais atualizada, novas versões em [UNoxJCommons](https://github.com/icarohs7/UNoxJCommons)
 
 ## Descrição
 
